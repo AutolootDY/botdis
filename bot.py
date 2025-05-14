@@ -29,8 +29,11 @@ class MyBot(commands.Bot):
             except Exception as e:
                 print(f"❌ Failed to load {ext}: {e}")
 
+    # async def on_ready(self):
+    #     print(f"✅ Bot พร้อมใช้งาน: {self.user}")
     async def on_ready(self):
-        print(f"✅ Bot พร้อมใช้งาน: {self.user}")
+    print(f"✅ Bot พร้อมใช้งาน: {self.user}", flush=True)
+
 
 bot = MyBot()
 bot.run(TOKEN)
