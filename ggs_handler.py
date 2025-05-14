@@ -27,7 +27,7 @@ scope = [
 # )
 creds_json = json.loads(os.getenv("GGS_CREDENTIALS_JSON"))
 # สร้าง credentials จากไฟล์
-creds = ServiceAccountCredentials.from_json_keyfile_name(creds_json, scope)
+creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_json, scope)
 gc = gspread.authorize(creds)
 
 sh = gc.open(SHEET_NAME)
