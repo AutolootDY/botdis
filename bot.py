@@ -32,7 +32,7 @@ class MyBot(commands.Bot):
     # async def on_ready(self):
     #     print(f"✅ Bot พร้อมใช้งาน: {self.user}")
     async def on_ready(self):
-    print(f"✅ Bot พร้อมใช้งาน: {self.user}", flush=True)
+        print(f"✅ Bot พร้อมใช้งาน: {self.user}", flush=True)
 
 
 bot = MyBot()
