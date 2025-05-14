@@ -11,8 +11,15 @@ scope = [
     "https://spreadsheets.google.com/feeds",
     "https://www.googleapis.com/auth/drive"
 ]
-# credentials.json จะถูกเขียนก่อนรัน (บน Render หรือ local)
-creds_json = os.getenv("GGS_CREDENTIALS_JSON_PATH", "credentials.json")
+
+# ถ้าเซ็ต env var GGS_CREDENTIALS_JSON_PATH ให้ใช้ค่านั้น
+# ถ้าไม่ ก็ใช้ mount path ของ Render โดยตรง
+creds_json = os.getenv(
+    "GGS_CREDENTIALS_JSON_PATH",
+    "/run/secrets/credentials.json"
+)
+
+# สร้าง credentials จากไฟล์
 creds = ServiceAccountCredentials.from_json_keyfile_name(creds_json, scope)
 gc = gspread.authorize(creds)
 
