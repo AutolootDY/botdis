@@ -19,10 +19,10 @@ scope = [
 #     "/run/secrets/credentials.json"
 # )
 
-print("🔍 Secrets dir:", os.listdir("/run/secrets"), flush=True)
+print("🔍 Secrets dir:", os.listdir("/etc/secrets"), flush=True)
 
 creds_json = ServiceAccountCredentials.from_json_keyfile_name(
-    "/run/secrets/credentials.json", scope
+    "/etc/secrets/credentials.json", scope
 )
 # สร้าง credentials จากไฟล์
 creds = ServiceAccountCredentials.from_json_keyfile_name(creds_json, scope)
