@@ -2,6 +2,7 @@ import os
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
+import json    
 
 # อ่าน .env ผ่าน bot.py ก่อนแล้ว
 SHEET_NAME = os.getenv("SHEET_NAME", "bot")
