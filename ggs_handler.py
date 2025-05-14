@@ -21,9 +21,10 @@ scope = [
 
 print("🔍 Secrets dir:", os.listdir("/run/secrets"), flush=True)
 
-creds_json = ServiceAccountCredentials.from_json_keyfile_name(
-    "/run/secrets/credentials.json", scope
-)
+# creds_json = ServiceAccountCredentials.from_json_keyfile_name(
+#     "/run/secrets/credentials.json", scope
+# )
+creds_json = json.loads(os.getenv("GGS_CREDENTIALS_JSON"))
 # สร้าง credentials จากไฟล์
 creds = ServiceAccountCredentials.from_json_keyfile_name(creds_json, scope)
 gc = gspread.authorize(creds)
