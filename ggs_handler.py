@@ -44,7 +44,7 @@ def find_user_row(username: str) -> int | None:
 
 # ฟังก์ชันอัปเดตคะแนนและบันทึกข้อความ
 def record_submission(username: str, content: str) -> int:
-    now = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     row = find_user_row(username)
     if not row:
         return -1
