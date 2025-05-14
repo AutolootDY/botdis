@@ -23,7 +23,7 @@ class EventHandler(commands.Cog):
 
         if isinstance(ch, discord.Thread) and ch.parent_id == self.TARGET_PARENT_ID:
             user = str(message.author)
-            now = datetime.utcnow()
+            now = datetime.now()
             last = self.recent_users.get(user)
             if last and (now - last) < timedelta(seconds=60):
                 return
