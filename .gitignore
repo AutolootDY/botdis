@@ -1,0 +1,8 @@
+# Secret files
+venv/
+.env
+credentials.json
+
+# Python cache
+__pycache__/
+*.pyc
