@@ -19,7 +19,7 @@ scope = [
 #     "/run/secrets/credentials.json"
 # )
 
-print("🔍 Secrets dir:", os.listdir("/run/secrets"), flush=True)
+# print("🔍 Secrets dir:", os.listdir("/run/secrets"), flush=True)
 
 # creds_json = ServiceAccountCredentials.from_json_keyfile_name(
 #     "/run/secrets/credentials.json", scope
