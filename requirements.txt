@@ -3,4 +3,3 @@ discord
 gspread
 oauth2client 
 dotenv
-ggs_handler
